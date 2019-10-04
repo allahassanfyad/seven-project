@@ -36,13 +36,15 @@
             android:textSize="18dp"
             android:textDirection="rtl"
             android:text="فيلا دوبلكس للبيع"
+            android:lines="2"
+            android:singleLine="false"
             android:textStyle="bold"
             android:textColor="@color/colorItemMain"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="8dp"
             android:layout_gravity="end"
             android:textSize="10dp"
             android:textDirection="rtl"
@@ -59,7 +61,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="10dp"
                 android:textDirection="rtl"
@@ -79,11 +81,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="10dp"
-                android:textDirection="rtl"
-                android:gravity="right|center"
                 android:text="خالد الجهني"
                 android:textColor="@color/colorDarkerGray"/>
 
