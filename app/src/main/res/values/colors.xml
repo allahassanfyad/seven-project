@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#d3d3d3</color>
+    <color name="colorPrimaryDark">#d3d3d3</color>
+    <color name="colorAccent">#b6b6b6</color>
+    <color name="colorDarkGray">#8A8989</color>
+    <color name="colorWhite">#ffff</color>
+    <color name="colorSelected">#a09382</color>
+    <color name="colorBlack">#090808</color>
+    <color name="colorSaudi">#007aff</color>
+    <color name="colorAllCities">#a2845e</color>
+    <color name="colorCars">#928f00</color>
+    <color name="colorItemMain">#0a9433</color>
+    <color name="colorDarkerGray">#535353</color>
+
+
+
+
+
+
+</resources>

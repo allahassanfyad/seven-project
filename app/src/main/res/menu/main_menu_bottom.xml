@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <item
+       android:id="@+id/home"
+       android:title="الرئيسية"
+       android:icon="@drawable/ic_house"/>
+
+    <item
+        android:id="@+id/personal"
+        android:title="الملف الشحصي"
+        android:icon="@drawable/ic_employee"/>
+
+    <item
+        android:id="@+id/ad"
+        android:title="اعلان جديد"
+        android:icon="@drawable/ic_round_add_button"/>
+
+    <item
+        android:id="@+id/search"
+        android:title="البحث"
+        android:icon="@drawable/ic_transparency"/>
+
+    <item
+        android:id="@+id/help"
+        android:title="المساعدة"
+        android:icon="@drawable/ic_24_hours"/>
+
+
+
+</menu>
