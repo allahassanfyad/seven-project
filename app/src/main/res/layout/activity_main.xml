@@ -21,9 +21,9 @@
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:scaleType="fitCenter"
-            android:layout_marginLeft="135dp"
-            android:src="@drawable/seven"
-            android:paddingTop="2dp"/>
+            android:layout_marginLeft="140dp"
+            android:src="@drawable/sevenlogo"
+            android:paddingTop="2dp" />
     </Toolbar>
 
 

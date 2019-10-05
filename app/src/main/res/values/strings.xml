@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">seven</string>
+    
+    <string-array name="saudi">
+        <item>السعودية</item>
+        <item>السعودية</item>
+        <item>السعودية</item>
+    </string-array>
+
+    <string-array name="allCities">
+        <item>كل المدن</item>
+        <item>كل المدن</item>
+        <item>كل المدن</item>
+    </string-array>
+
+    <string-array name="cars">
+        <item>السيارات</item>
+        <item>السيارات</item>
+        <item>السيارات</item>
+    </string-array>
+
 </resources>

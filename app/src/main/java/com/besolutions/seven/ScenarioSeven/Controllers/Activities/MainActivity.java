@@ -20,16 +20,18 @@ public class MainActivity extends AppCompatActivity {
     FragmentTransaction fragmentTransaction;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         navigation=(BottomNavigationView)findViewById(R.id.navigation);
         fragmentManager=getSupportFragmentManager();
+        navigation.setSelectedItemId(R.id.home);
         HomeFragment homeFragment = new HomeFragment();
         loadFragment(homeFragment);
 
-        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
+        {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
             {
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                     default:
                         return true;
+
                 }
 
 
