@@ -12,6 +12,9 @@
     <color name="colorCars">#928f00</color>
     <color name="colorItemMain">#0a9433</color>
     <color name="colorDarkerGray">#535353</color>
+    <color name="radio_button_selected_color">#ff33b5e5</color>
+    <color name="radio_button_unselected_color">#e0e0e0</color>
+    <color name="colorDelete">#ee5002</color>
 
 
 

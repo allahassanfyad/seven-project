@@ -17,13 +17,47 @@
         android:layout_height="wrap_content"
         android:background="@color/colorAccent">
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:layout_marginLeft="140dp"
-            android:src="@drawable/sevenlogo"
-            android:paddingTop="2dp" />
+        <LinearLayout
+            android:id="@+id/linearToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="رجوع"
+                android:textSize="20dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/colorWhite"
+                android:layout_gravity="left|center"
+                android:visibility="visible"/>
+
+            <ImageView
+                android:id="@+id/imglogo"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="90dp"
+                android:src="@drawable/sevenlogo"
+                android:paddingTop="2dp" />
+
+            <ImageView
+                android:id="@+id/imgPlus"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="fitCenter"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="107dp"
+                android:src="@drawable/whiteplus"
+                android:paddingTop="2dp" />
+
+
+
+
+        </LinearLayout>
+
     </Toolbar>
 
 

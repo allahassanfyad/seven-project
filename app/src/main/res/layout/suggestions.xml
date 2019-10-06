@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="9dp"
+    app:cardCornerRadius="4dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearSuggestion"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimary"
+        android:layoutDirection="rtl">
+
+        <ImageView
+            android:id="@+id/imgSuggest"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/download"
+            android:background="@color/colorDarkerGray"/>
+
+        <TextView
+            android:id="@+id/textSuggest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorItemMain"
+            android:text="تلميع وازالة البقع والاوساخ من مقاعد سيارتك"
+            android:layout_margin="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearSuggestion2"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/location"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="جدة"
+                android:textColor="@color/colorBlack"
+                android:layout_gravity="center"
+                android:layout_marginStart="7dp"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

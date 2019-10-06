@@ -8,6 +8,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toolbar;
 
 
 import com.besolutions.seven.R;
@@ -18,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView navigation;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
+    Toolbar toolbar;
+    TextView textback;
+    ImageView imgplus;
+
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -29,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         navigation.setSelectedItemId(R.id.home);
         HomeFragment homeFragment = new HomeFragment();
         loadFragment(homeFragment);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        textback = (TextView) toolbar.findViewById(R.id.textBack);
+        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+        imgplus.setVisibility(View.VISIBLE);
+        textback.setVisibility(View.INVISIBLE);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener()
         {
@@ -40,26 +53,51 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         HomeFragment homeFragment = new HomeFragment();
                         loadFragment(homeFragment);
+                        toolbar = (Toolbar)findViewById(R.id.toolbar);
+                        textback = (TextView) toolbar.findViewById(R.id.textBack);
+                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+                        imgplus.setVisibility(View.VISIBLE);
+                        textback.setVisibility(View.INVISIBLE);
                         return true;
 
                     case R.id.personal:
                         PersonalFragment personalFragment = new PersonalFragment();
                         loadFragment(personalFragment);
+                        toolbar = (Toolbar)findViewById(R.id.toolbar);
+                        textback = (TextView) toolbar.findViewById(R.id.textBack);
+                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+                        imgplus.setVisibility(View.VISIBLE);
+                        textback.setVisibility(View.VISIBLE);
                         return true;
 
                     case R.id.ad:
                         AdFragment adFragment = new AdFragment();
                         loadFragment(adFragment);
+                        toolbar = (Toolbar)findViewById(R.id.toolbar);
+                        textback = (TextView) toolbar.findViewById(R.id.textBack);
+                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+                        imgplus.setVisibility(View.INVISIBLE);
+                        textback.setVisibility(View.INVISIBLE);
                         return true;
 
-                    case R.id.search:
+                        case R.id.search:
                         SearchFragment searchFragment = new SearchFragment();
                         loadFragment(searchFragment);
+                        toolbar = (Toolbar)findViewById(R.id.toolbar);
+                        textback = (TextView) toolbar.findViewById(R.id.textBack);
+                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+                        imgplus.setVisibility(View.INVISIBLE);
+                        textback.setVisibility(View.INVISIBLE);
                         return true;
 
                     case R.id.help:
                         HelpFragment helpFragment = new HelpFragment();
                         loadFragment(helpFragment);
+                        toolbar = (Toolbar)findViewById(R.id.toolbar);
+                        textback = (TextView) toolbar.findViewById(R.id.textBack);
+                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+                        imgplus.setVisibility(View.INVISIBLE);
+                        textback.setVisibility(View.INVISIBLE);
                         return true;
 
 
