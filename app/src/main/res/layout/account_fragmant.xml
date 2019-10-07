@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Two"
             style="@style/RadioButton" />
+        
     </info.hoang8f.android.segmented.SegmentedGroup>
 
 
