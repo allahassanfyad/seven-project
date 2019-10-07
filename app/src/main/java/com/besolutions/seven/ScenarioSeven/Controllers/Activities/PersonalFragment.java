@@ -40,7 +40,8 @@ public class PersonalFragment extends Fragment
 
 
         Button button = (Button)view.findViewById(R.id.buttonPerAccount);
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View view)
             {
@@ -62,6 +63,16 @@ public class PersonalFragment extends Fragment
             }
 
         });
+
+         Button button2 = (Button)view.findViewById(R.id.buttonPerExit);
+         button2.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+
+             }
+         });
+
+
         return view;
 
     }

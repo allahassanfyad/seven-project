@@ -1,4 +1,4 @@
-package com.besolutions.seven.ScenarioSeven.Models;
+package com.besolutions.seven.ScenarioSeven.Controllers.Activities;
 
 import androidx.fragment.app.Fragment;
 

@@ -12,16 +12,25 @@ import android.widget.Toolbar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.besolutions.seven.R;
+import com.besolutions.seven.ScenarioSeven.Models.RcyMain;
+import com.besolutions.seven.ScenarioSeven.Models.RcyMainGrid;
+import com.besolutions.seven.ScenarioSeven.Patterns.RcyMainAdapter;
+import com.besolutions.seven.ScenarioSeven.Patterns.RcyMainGridAdapter;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
-public class ItemMainFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener
+public class ItemMainFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener,RcyMainGridAdapter.OnItemListener
 {
     private View view;
     private SliderLayout msliderlayout;
@@ -57,7 +66,32 @@ public class ItemMainFragment extends Fragment implements BaseSliderView.OnSlide
             textSliderView.getBundle()
                     .putString("extra", name);
             msliderlayout.addSlider(textSliderView);
+
         }
+
+
+            List<RcyMainGrid> vila = new ArrayList<>();
+
+            int posters[] ={R.drawable.download, R.drawable.download1, R.drawable.download2,
+                    R.drawable.download3, R.drawable.download4};
+
+
+            String textsuggest[] ={"فيلا للايجار بسغر مميز", "فيلل في كل انحاْ السعودية", "شقق للايجار ", "فيلا دوبلكس للايجار", "فيلا 3 ادوار للبيع"};
+
+            String textsuggest1[] = {"خالد الجهني", "هشام الجخ", "علاء حسن", "محمود صابر", "هشام عبدالله" };
+
+            for (int i =0; i < posters.length; i++)
+            {
+
+                RcyMainGrid villa = new RcyMainGrid(textsuggest[i],textsuggest1[i],posters[i]);
+
+                vila.add(villa);
+            }
+
+            RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rcyclgrid);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            RcyMainGridAdapter adabter = new RcyMainGridAdapter(vila,getContext(),this);
+            recyclerView.setAdapter(adabter);
 
         return view;
     }
@@ -82,19 +116,30 @@ public class ItemMainFragment extends Fragment implements BaseSliderView.OnSlide
     }
 
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
+    {
 
     }
 
     @Override
-    public void onPageSelected(int position) {
+    public void onPageSelected(int position)
+    {
         Log.d("MainActivity", "Page Changed: " + position);
 
 
     }
 
     @Override
-    public void onPageScrollStateChanged(int state) {
+    public void onPageScrollStateChanged(int state)
+    {
 
+    }
+
+    @Override
+    public void onItemClick(int position)
+    {
+        FragmentTransaction fr = getFragmentManager().beginTransaction();
+        fr.replace(R.id.fragment_container,new ItemMainFragment());
+        fr.commit();
     }
 }

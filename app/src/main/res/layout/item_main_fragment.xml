@@ -267,12 +267,14 @@
             </com.daimajia.slider.library.SliderLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcyclgrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 custom:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 custom:spanCount="2"
                 android:background="@color/colorWhite"
-                tools:listitem="@layout/suggestions">
+                tools:listitem="@layout/suggestions"
+                >
 
 
             </androidx.recyclerview.widget.RecyclerView>

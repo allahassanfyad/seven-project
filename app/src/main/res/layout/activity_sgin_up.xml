@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScenarioSeven.Controllers.Activities.Sign_up"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sevenlogo"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="تسجيل عضو جديد"
+        android:textColor="@color/colorSaudi"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:gravity="right"
+        android:hint="الاسم كامل"
+        android:inputType="text"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorDarkGray" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="text"
+        android:hint="البريد الالكتروني"
+        android:paddingRight="10dp"
+        android:textColorHint="@color/colorDarkGray"
+        android:textColor="@color/colorBlack"
+        android:gravity="right"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="numberPassword"
+        android:hint="كلمة السر"
+        android:paddingRight="10dp"
+        android:textColorHint="@color/colorDarkGray"
+        android:textColor="@color/colorBlack"
+        android:gravity="right"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="numberPassword"
+        android:hint="تاكيد كلمة السر"
+        android:paddingRight="10dp"
+        android:textColorHint="@color/colorDarkGray"
+        android:textColor="@color/colorBlack"
+        android:gravity="right"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="text"
+        android:hint="05xxxxxxxx"
+        android:paddingRight="10dp"
+        android:textColorHint="@color/colorDarkGray"
+        android:textColor="@color/colorBlack"
+        android:gravity="right"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="text"
+        android:hint="السعودية"
+        android:paddingRight="10dp"
+        android:textColorHint="@color/colorBlack"
+        android:textColor="@color/colorBlack"
+        android:gravity="right"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:inputType="text"
+        android:hint="الرياض"
+        android:paddingRight="10dp"
+        android:textColorHint="@color/colorBlack"
+        android:textColor="@color/colorBlack"
+        android:gravity="right"
+        android:background="@android:drawable/editbox_background"
+        android:backgroundTint="@color/colorWhite"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="5dp"
+        />
+
+
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:text="تسجيل"
+        android:background="@drawable/redus"
+        android:backgroundTint="@color/colorSaudi"
+        android:layout_gravity="center"
+        android:textColor="@color/colorWhite"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="23dp"/>
+
+
+</LinearLayout>
