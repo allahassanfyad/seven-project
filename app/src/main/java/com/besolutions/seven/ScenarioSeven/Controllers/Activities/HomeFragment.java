@@ -43,9 +43,10 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemSelected
     {
         view = inflater.inflate(R.layout.home_fragment,container,false);
 
-        Spinner spinner = (Spinner)view.findViewById(R.id.cars);
-        Spinner spinner1 = (Spinner)view.findViewById(R.id.allCities);
-        Spinner spinner2 = (Spinner)view.findViewById(R.id.saudi);
+        Spinner spinner =  new Spinner(getContext());
+        Spinner spinner1 = (Spinner)view.findViewById(R.id.cars);
+        Spinner spinner2 = (Spinner)view.findViewById(R.id.allCities);
+        Spinner spinner3 = (Spinner)view.findViewById(R.id.saudi);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),R.array.cars,android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);

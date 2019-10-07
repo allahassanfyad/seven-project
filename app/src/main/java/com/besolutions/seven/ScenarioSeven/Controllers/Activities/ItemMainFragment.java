@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -89,7 +91,8 @@ public class ItemMainFragment extends Fragment implements BaseSliderView.OnSlide
             }
 
             RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rcyclgrid);
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recyclerView.setHasFixedSize(true);
+            recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
             RcyMainGridAdapter adabter = new RcyMainGridAdapter(vila,getContext(),this);
             recyclerView.setAdapter(adabter);
 

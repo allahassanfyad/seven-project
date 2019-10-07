@@ -14,9 +14,10 @@
     </string-array>
 
     <string-array name="cars">
-        <item>السيارات</item>
-        <item>السيارات</item>
-        <item>السيارات</item>
+        <item> السيارات </item>
+        <item> السيارات </item>
+        <item> السيارات </item>
     </string-array>
+
 
 </resources>
