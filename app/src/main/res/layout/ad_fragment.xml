@@ -1,217 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:background="@drawable/background">
-
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <androidx.cardview.widget.CardView
-        android:id="@+id/view2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_centerHorizontal="true"
-        android:elevation="12dp"
-        android:innerRadius="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginBottom="20dp"
-        android:shape="ring"
-        android:thicknessRatio="1.9"
-        app:cardCornerRadius="40dp">
-
-        <ImageView
-            android:id="@+id/profilePhoto"
-            android:layout_width="80dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/vila"
-            android:scaleType="centerCrop"/>
-
-
-    </androidx.cardview.widget.CardView>
-
-
-</LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/textName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hesham"
-        android:textSize="15dp"
-        android:textColor="@color/colorSaudi"
-        android:layout_gravity="right"
-        android:textStyle="bold"
-        android:layout_marginRight="95dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="15dp"/>
-
-    <TextView
-        android:id="@+id/textCharge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="الرصيد الحالي"
-        android:textSize="15dp"
-        android:textColor="@color/colorSaudi"
-        android:layout_gravity="right"
-        android:textStyle="bold"
-        android:layout_marginRight="80dp"
-        android:layout_marginBottom="15dp"/>
-
-</LinearLayout>
-
-<TextView
-    android:id="@+id/textAmount"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="right"
-    android:layout_marginTop="85dp"
-    android:layout_marginLeft="295dp"
-    android:layout_marginBottom="15dp"
-    android:text=" 60"
-    android:textColor="@color/colorSaudi"
-    android:textSize="20dp"
-    android:textStyle="bold" />
-
-
-<ImageView
-    android:layout_width="42dp"
-    android:layout_height="42dp"
-    android:src="@drawable/ryal"
-    android:layout_marginTop="77dp"
-    android:layout_marginLeft="255dp"/>
-
-
-<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="125dp"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background">
 
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/colorWhite"
-        android:gravity="right"
-        android:hint="عنوان الاعلان (سيارة للبيع-عقار للبيع-الخ..)"
-        android:inputType="text"
-        android:paddingRight="10dp"
-        android:textColor="@color/colorBlack"
-        android:textColorHint="@color/colorDarkGray" />
 
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:inputType="text"
-        android:hint="اضف صور او فيديو 45 ثانية "
-        android:paddingRight="10dp"
-        android:textColorHint="@color/colorDarkGray"
-        android:textColor="@color/colorBlack"
-        android:gravity="right"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/colorWhite"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="5dp"
-        />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:inputType="text"
-        android:hint="القسم"
-        android:paddingRight="10dp"
-        android:textColorHint="@color/colorDarkGray"
-        android:textColor="@color/colorBlack"
-        android:gravity="right"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/colorWhite"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="5dp"
-        />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:inputType="text"
-        android:hint="05xxxxxxxxx"
-        android:paddingRight="10dp"
-        android:textColorHint="@color/colorDarkGray"
-        android:textColor="@color/colorBlack"
-        android:gravity="right"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/colorWhite"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="5dp"
-        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/view2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="12dp"
+            android:innerRadius="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="20dp"
+            android:shape="ring"
+            android:thicknessRatio="1.9"
+            app:cardCornerRadius="40dp">
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="match_parent"
-        android:layout_height="33dp"
-        android:inputType="text"
-        android:hint="المدينة"
-        android:paddingRight="10dp"
-        android:textColorHint="@color/colorDarkGray"
-        android:textColor="@color/colorBlack"
-        android:gravity="right"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/colorWhite"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="5dp"
-        />
+            <ImageView
+                android:id="@+id/profilePhoto"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/vila"
+                android:scaleType="centerCrop"/>
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:inputType="text"
-        android:hint="وصف الاعلان"
-        android:paddingRight="10dp"
-        android:textColorHint="@color/colorDarkGray"
-        android:textColor="@color/colorBlack"
-        android:gravity="right"
-        android:background="@android:drawable/editbox_background"
-        android:backgroundTint="@color/colorWhite"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="5dp"
-        android:singleLine="false"
-        android:lines="4"
-        />
 
-    <Button
-        android:layout_width="160dp"
-        android:layout_height="35dp"
-        android:layout_gravity="center"
-        android:background="@drawable/redus"
-        android:backgroundTint="@color/colorAllCities"
-        android:layout_marginTop="5dp"
-        android:text="أضف الاعلان"
-        android:textSize="16dp"
-        />
+        </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="hesham"
+                android:textSize="15dp"
+                android:textColor="@color/colorSaudi"
+                android:layout_gravity="right"
+                android:textStyle="bold"
+                android:layout_marginRight="95dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="15dp"/>
+            <TextView
+                android:id="@+id/textCharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الرصيد الحالي"
+                android:textSize="15dp"
+                android:textColor="@color/colorSaudi"
+                android:layout_gravity="right"
+                android:textStyle="bold"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom="15dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="85dp"
+            android:layout_marginLeft="295dp"
+            android:layout_marginBottom="15dp"
+            android:text=" 60"
+            android:textColor="@color/colorSaudi"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/ryal"
+            android:layout_marginTop="77dp"
+            android:layout_marginLeft="255dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="125dp"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="right"
+                android:hint="عنوان الاعلان (سيارة للبيع-عقار للبيع-الخ..)"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorDarkGray" />
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:inputType="text"
+                android:hint="اضف صور او فيديو 45 ثانية "
+                android:paddingRight="10dp"
+                android:textColorHint="@color/colorDarkGray"
+                android:textColor="@color/colorBlack"
+                android:gravity="right"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:inputType="text"
+                android:hint="القسم"
+                android:paddingRight="10dp"
+                android:textColorHint="@color/colorDarkGray"
+                android:textColor="@color/colorBlack"
+                android:gravity="right"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:inputType="text"
+                android:hint="05xxxxxxxxx"
+                android:paddingRight="10dp"
+                android:textColorHint="@color/colorDarkGray"
+                android:textColor="@color/colorBlack"
+                android:gravity="right"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:inputType="text"
+                android:hint="المدينة"
+                android:paddingRight="10dp"
+                android:textColorHint="@color/colorDarkGray"
+                android:textColor="@color/colorBlack"
+                android:gravity="right"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                />
+            <EditText
+                android:id="@+id/editText5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:inputType="text"
+                android:hint="وصف الاعلان"
+                android:paddingRight="10dp"
+                android:textColorHint="@color/colorDarkGray"
+                android:textColor="@color/colorBlack"
+                android:gravity="right"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:singleLine="false"
+                android:lines="4"
+                />
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/redus"
+                android:backgroundTint="@color/colorAllCities"
+                android:layout_marginTop="5dp"
+                android:text="أضف الاعلان"
+                android:textSize="16dp"
+                />
+        </LinearLayout>
+
+
 
 </RelativeLayout>

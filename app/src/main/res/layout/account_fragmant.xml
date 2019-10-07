@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
-
-
 
 
     <info.hoang8f.android.segmented.SegmentedGroup
@@ -20,204 +19,223 @@
         segmentedgroup:sc_corner_radius="10dp">
 
         <RadioButton
-            android:id="@+id/button21"
+            android:id="@+id/btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="One"
+            android:background="@drawable/redus"
+            android:text="المنتهية"
+            android:layout_weight="1"
+            style="@style/RadioButton"/>
+
+        <RadioButton
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="كل الاعلانات"
             style="@style/RadioButton" />
 
         <RadioButton
-            android:id="@+id/button22"
+            android:id="@+id/btn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Two"
+            android:layout_weight="1"
+            android:text="البيانات"
+            android:checked="true"
             style="@style/RadioButton" />
-        
+
+
     </info.hoang8f.android.segmented.SegmentedGroup>
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="65dp">
+    <RelativeLayout
+        android:id="@+id/relativeAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/view2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:elevation="12dp"
-            android:innerRadius="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginBottom="20dp"
-            android:shape="ring"
-            android:thicknessRatio="1.9"
-            app:cardCornerRadius="40dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/profilePhoto"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/view2"
                 android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/vila"
-                android:scaleType="centerCrop"/>
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="12dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="40dp">
+
+                <ImageView
+                    android:id="@+id/profilePhoto"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/vila" />
 
 
-        </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="65dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="95dp"
+                android:layout_marginBottom="15dp"
+                android:text="hesham"
+                android:textColor="@color/colorSaudi"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textCharge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom="15dp"
+                android:text="الرصيد الحالي"
+                android:textColor="@color/colorSaudi"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/textName"
+            android:id="@+id/textAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hesham"
-            android:textSize="15dp"
-            android:textColor="@color/colorSaudi"
             android:layout_gravity="right"
-            android:textStyle="bold"
-            android:layout_marginRight="95dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginLeft="295dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="15dp"
+            android:text=" 60"
+            android:textColor="@color/colorSaudi"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textCharge"
-            android:layout_width="wrap_content"
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="255dp"
+            android:layout_marginTop="75dp"
+            android:src="@drawable/ryal" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="الرصيد الحالي"
-            android:textSize="15dp"
-            android:textColor="@color/colorSaudi"
-            android:layout_gravity="right"
-            android:textStyle="bold"
-            android:layout_marginRight="80dp"
-            android:layout_marginBottom="15dp"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="295dp"
-        android:layout_marginBottom="15dp"
-        android:text=" 60"
-        android:textColor="@color/colorSaudi"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+            android:layout_marginTop="130dp"
+            android:orientation="vertical">
 
 
-    <ImageView
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:src="@drawable/ryal"
-        android:layout_marginTop="145dp"
-        android:layout_marginLeft="255dp"/>
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="right"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:text="الاسم : hesham "
+                android:textColor="@color/colorSaudi"
+                android:textColorHint="@color/colorDarkGray" />
 
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="right"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:text="الجوال : 666666666"
+                android:textColor="@color/colorSaudi"
+                android:textColorHint="@color/colorDarkGray" />
 
-    <LinearLayout
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="right"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:text="البريد الالكتروني : o.o@o.o"
+                android:textColor="@color/colorSaudi"
+                android:textColorHint="@color/colorDarkGray" />
+
+            <EditText
+                android:id="@+id/editText3"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="right"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:text="المدينة : الرياض"
+                android:textColor="@color/colorSaudi"
+                android:textColorHint="@color/colorDarkGray" />
+
+            <EditText
+                android:id="@+id/editText4"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="5dp"
+                android:background="@android:drawable/editbox_background"
+                android:backgroundTint="@color/colorWhite"
+                android:gravity="right"
+                android:inputType="text"
+                android:paddingRight="10dp"
+                android:text="البلد : السعودية"
+                android:textColor="@color/colorSaudi"
+                android:textColorHint="@color/colorDarkGray" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcyAccount"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/all_ads_personal"
+        android:visibility="invisible"/>
 
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:background="@android:drawable/editbox_background"
-            android:backgroundTint="@color/colorWhite"
-            android:gravity="right"
-            android:text="الاسم : hesham "
-            android:inputType="text"
-            android:paddingRight="10dp"
-            android:textColor="@color/colorSaudi"
-            android:textColorHint="@color/colorDarkGray" />
-
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:inputType="text"
-            android:text="الجوال : 666666666"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/colorDarkGray"
-            android:textColor="@color/colorSaudi"
-            android:gravity="right"
-            android:background="@android:drawable/editbox_background"
-            android:backgroundTint="@color/colorWhite"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
-            />
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:inputType="text"
-            android:text="البريد الالكتروني : o.o@o.o"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/colorDarkGray"
-            android:textColor="@color/colorSaudi"
-            android:gravity="right"
-            android:background="@android:drawable/editbox_background"
-            android:backgroundTint="@color/colorWhite"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
-            />
-
-        <EditText
-            android:id="@+id/editText3"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:inputType="text"
-            android:text="المدينة : الرياض"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/colorDarkGray"
-            android:textColor="@color/colorSaudi"
-            android:gravity="right"
-            android:background="@android:drawable/editbox_background"
-            android:backgroundTint="@color/colorWhite"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
-            />
-
-        <EditText
-            android:id="@+id/editText4"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:inputType="text"
-            android:text="البلد : السعودية"
-            android:paddingRight="10dp"
-            android:textColorHint="@color/colorDarkGray"
-            android:textColor="@color/colorSaudi"
-            android:gravity="right"
-            android:background="@android:drawable/editbox_background"
-            android:backgroundTint="@color/colorWhite"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="5dp"
-            />
-
-    </LinearLayout>
-
-
-
-</RelativeLayout>
+</LinearLayout>
