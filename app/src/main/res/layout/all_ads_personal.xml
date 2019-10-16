@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:id="@+id/adspersonal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -37,7 +39,7 @@
             >
 
             <TextView
-                android:id="@+id/textAdPersona"
+                android:id="@+id/textAdPersonalTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -51,7 +53,7 @@
                 android:textColor="@color/colorItemMain"/>
 
             <TextView
-                android:id="@+id/textAdPersonal"
+                android:id="@+id/textAdPersonalDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -69,7 +71,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/textAdPersona2"
+                    android:id="@+id/textAdPersonalCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -90,7 +92,7 @@
                     android:layout_marginRight="100dp"/>
 
                 <TextView
-                    android:id="@+id/textAdPersona3"
+                    android:id="@+id/textAdPersonalName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -116,7 +118,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/btnAdPersona"
+            android:id="@+id/btnAdPersonalEdit"
             android:layout_width="90dp"
             android:layout_height="35dp"
             android:text="تعديل"
@@ -128,7 +130,7 @@
             android:background="@drawable/redus"/>
 
         <Button
-            android:id="@+id/btnAdPersona1"
+            android:id="@+id/btnAdPersona1Refresh"
             android:layout_width="90dp"
             android:layout_height="35dp"
             android:text="تحديث"
@@ -141,7 +143,7 @@
             android:background="@drawable/redus"/>
 
         <Button
-            android:id="@+id/btnAdPersona2"
+            android:id="@+id/btnAdPersonalDelete"
             android:layout_width="90dp"
             android:layout_height="35dp"
             android:text="حذف"

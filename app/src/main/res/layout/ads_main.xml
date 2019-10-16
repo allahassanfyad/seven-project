@@ -85,7 +85,7 @@
                 android:layout_height="18dp"
                 android:src="@drawable/location"
                 android:layout_gravity="center"
-                android:layout_marginRight="100dp"/>
+                android:layout_marginRight="60dp"/>
 
             <TextView
                 android:id="@+id/textMain3"

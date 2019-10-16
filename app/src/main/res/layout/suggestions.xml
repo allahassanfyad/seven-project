@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="220dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginTop="8dp"
     android:layout_marginRight="13dp"
@@ -13,14 +13,13 @@
     <LinearLayout
         android:id="@+id/linearSuggestion"
         android:layout_width="170dp"
-        android:layout_height="wrap_content"
+        android:layout_height="220dp"
         android:orientation="vertical"
-        android:layout_marginTop="5dp"
         android:background="@color/colorPrimary"
         android:layoutDirection="rtl">
 
         <ImageView
-            android:id="@+id/poster1"
+            android:id="@+id/posterSuggest"
             android:layout_width="match_parent"
             android:layout_height="130dp"
             android:scaleType="centerCrop"
@@ -28,11 +27,11 @@
             android:background="@color/colorDarkerGray"/>
 
         <TextView
-            android:id="@+id/textSuggest"
+            android:id="@+id/textSuggestTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/colorItemMain"
-            android:text="تلميع وازالة البقع والاوساخ من مقاعد سيارتك"
+            android:text="تلميع وازالة البقع والاوساخ من جميع الاماكن والمناطق الممكنة والغير ممكنة  "
             android:layout_margin="5dp"/>
 
         <LinearLayout
@@ -52,7 +51,7 @@
                 android:layout_marginBottom="10dp"/>
 
             <TextView
-                android:id="@+id/textSuggest1"
+                android:id="@+id/textSuggestCity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="جدة"

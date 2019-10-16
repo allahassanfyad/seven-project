@@ -21,7 +21,8 @@
             android:id="@+id/linearToolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/textBack"
@@ -39,19 +40,18 @@
                 android:layout_width="120dp"
                 android:layout_height="50dp"
                 android:scaleType="fitCenter"
-                android:layout_marginLeft="90dp"
+                android:layout_marginLeft="65dp"
                 android:src="@drawable/sevenlogo"
                 android:paddingTop="2dp" />
 
             <ImageView
                 android:id="@+id/imgPlus"
-                android:layout_width="24dp"
+                android:layout_width="15dp"
                 android:layout_height="24dp"
+                android:layout_marginLeft="90dp"
+                android:paddingTop="2dp"
                 android:scaleType="fitCenter"
-                android:layout_marginTop="13dp"
-                android:layout_marginLeft="107dp"
-                android:src="@drawable/whiteplus"
-                android:paddingTop="2dp" />
+                android:src="@drawable/whiteplus" />
 
 
 
@@ -59,7 +59,6 @@
         </LinearLayout>
 
     </Toolbar>
-
 
 
     <FrameLayout

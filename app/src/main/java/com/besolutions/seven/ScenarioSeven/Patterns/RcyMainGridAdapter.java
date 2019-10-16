@@ -14,18 +14,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.besolutions.seven.R;
 import com.besolutions.seven.ScenarioSeven.Controllers.Activities.ItemMainFragment;
+import com.besolutions.seven.ScenarioSeven.Models.Post;
 import com.besolutions.seven.ScenarioSeven.Models.RcyMainGrid;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 public class RcyMainGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
 
-    List<RcyMainGrid> mMainGridList;
+    List<Post> mMainGridList;
     Context mContext;
     private OnItemListener mOnItemListener;
 
-    public RcyMainGridAdapter(List<RcyMainGrid> songsList, Context context, OnItemListener onItemListener) {
+    public RcyMainGridAdapter(List<Post> songsList, Context context, OnItemListener onItemListener) {
         this.mMainGridList = songsList;
         this.mContext = context;
         this.mOnItemListener = onItemListener;
@@ -50,15 +52,18 @@ public class RcyMainGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         int viewType = getItemViewType(position);
-        final RcyMainGrid main  = mMainGridList.get(position);
+        final Post main  = mMainGridList.get(position);
 
 
         MainItemHolder mainHolder =(MainItemHolder) holder;
 
 
-        mainHolder.textsuggest.setText(main.getTextsuggest());
-        mainHolder.textsuggest1.setText(main.getTextsuggest1());
-        mainHolder.poster.setImageResource(main.getPoster1());
+        mainHolder.textsuggesttitle.setText(main.getTitle());
+        mainHolder.textsuggestcity.setText(main.getCity());
+        Glide.with(mContext)
+                .load(main.getImage())
+                .placeholder(R.drawable.imgposting)
+                .into(mainHolder.postersuggest);
 
 
     }
@@ -71,17 +76,18 @@ public class RcyMainGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
     public class MainItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener
     {
-        TextView textsuggest,textsuggest1;
-        ImageView poster;
+        TextView textsuggesttitle,textsuggestcity;
+        ImageView postersuggest;
         LinearLayout lineasuggest;
         OnItemListener onItemListener;
+
         public MainItemHolder(@NonNull View itemView,OnItemListener onItemListener)
         {
             super(itemView);
-            textsuggest = (TextView) itemView.findViewById(R.id.textSuggest);
-            textsuggest1 = (TextView) itemView.findViewById(R.id.textSuggest1);
-            poster = (ImageView)  itemView.findViewById(R.id.poster1);
-            lineasuggest = (LinearLayout) itemView.findViewById(R.id.linearSuggestion);
+            textsuggesttitle = itemView.findViewById(R.id.textSuggestTitle);
+            textsuggestcity = itemView.findViewById(R.id.textSuggestCity);
+            postersuggest = itemView.findViewById(R.id.posterSuggest);
+            lineasuggest = itemView.findViewById(R.id.linearSuggestion);
             this.onItemListener= onItemListener;
 
              itemView.setOnClickListener(this);

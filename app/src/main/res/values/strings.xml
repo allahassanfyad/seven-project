@@ -9,14 +9,21 @@
 
     <string-array name="allCities">
         <item>كل المدن</item>
-        <item>كل المدن</item>
-        <item>كل المدن</item>
+        <item>الرياض</item>
+        <item>الدمام</item>
+        <item>جده</item>
+        <item>الأحساء</item>
+        <item>الطائف</item>
+        <item>بريدة</item>
+
     </string-array>
 
-    <string-array name="cars">
+    <string-array name="department">
         <item> السيارات </item>
-        <item> السيارات </item>
-        <item> السيارات </item>
+        <item> الخدمات </item>
+        <item> الاسرة المنتجة </item>
+        <item> الاجهزة </item>
+        <item> اثاث </item>
     </string-array>
 
 

@@ -1,148 +1,232 @@
 package com.besolutions.seven.ScenarioSeven.Controllers.Activities;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
+import com.android.volley.VolleyError;
+import com.besolutions.seven.NetworkLayer.Apicalls;
+import com.besolutions.seven.NetworkLayer.NetworkInterface;
+import com.besolutions.seven.NetworkLayer.ResponseModel;
 import com.besolutions.seven.R;
-import com.besolutions.seven.ScenarioSeven.Models.RcyMain;
-import com.besolutions.seven.ScenarioSeven.Models.RcyMainGrid;
-import com.besolutions.seven.ScenarioSeven.Patterns.RcyMainAdapter;
+import com.besolutions.seven.ScenarioSeven.Models.Post;
 import com.besolutions.seven.ScenarioSeven.Patterns.RcyMainGridAdapter;
-import com.daimajia.slider.library.SliderLayout;
-import com.daimajia.slider.library.SliderTypes.BaseSliderView;
-import com.daimajia.slider.library.SliderTypes.TextSliderView;
-import com.daimajia.slider.library.Tricks.ViewPagerEx;
+import com.besolutions.seven.ScenarioSeven.Patterns.Slider_adapter;
+import com.besolutions.seven.Utils.MyUtilFile;
+import com.besolutions.seven.Utils.TinyDB;
+import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-public class ItemMainFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener,RcyMainGridAdapter.OnItemListener
+public class ItemMainFragment extends AppCompatActivity implements RcyMainGridAdapter.OnItemListener, NetworkInterface
 {
     private View view;
-    private SliderLayout msliderlayout;
+    private ViewPager viewPager;
+    Post[] post;
+    TextView textitemtitle,textitemdate,textitemname,textitemcity,textitemdesc;
+    Button btnnumber;
+
+    String title,date,name,city,description,phonenumber;
+
+    String img,img1,img2,img3,img4,img5,img6,img7,department,URLItem;
+
+    String[] ads;
+
+    Slider_adapter slider_adapter;
+
+    ImageView slidercontain;
+
+    TinyDB tinyDB;
+
+    ImageView imgtwitter,imgface,imgplus;
+
+    List<Post> suggestlist = new ArrayList<>();
 
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-    {
-        view = inflater.inflate(R.layout.item_main_fragment, container, false);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.item_main_fragment);
 
-        msliderlayout=(SliderLayout)view.findViewById(R.id.slider);
-
-
-        HashMap<String,Integer> photos=new HashMap<String, Integer>();
-        photos.put("photo Ads",R.drawable.download);
-        photos.put("photo Ads 2",R.drawable.download1);
-        photos.put("photo Ads 3",R.drawable.download2);
-        photos.put("photo Ads 4",R.drawable.download3);
-        photos.put("photo Ads 5",R.drawable.download4);
-        photos.put("photo Ads 6",R.drawable.vila);
-
-        for (String name : photos.keySet()) {
-            TextSliderView textSliderView = new TextSliderView(getContext());
-
-            textSliderView
-                    .description(name)
-                    .image(photos.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.Fit)
-                    .setOnSliderClickListener(this);
-
-            textSliderView.bundle(new Bundle());
-            textSliderView.getBundle()
-                    .putString("extra", name);
-            msliderlayout.addSlider(textSliderView);
-
-        }
+        slidercontain = findViewById(R.id.slidercontain);
 
 
-            List<RcyMainGrid> vila = new ArrayList<>();
+        textitemtitle = findViewById(R.id.textItemTitle);
+        textitemdate = findViewById(R.id.textItemDate);
+        textitemname = findViewById(R.id.textItemName);
+        textitemcity = findViewById(R.id.textItemCity);
+        textitemdesc = findViewById(R.id.textItemDes);
+        btnnumber = findViewById(R.id.btnItemNumber);
+        imgtwitter = findViewById(R.id.imgTwitter);
+        imgface = findViewById(R.id.imgFace);
+        imgplus = findViewById(R.id.imgPlus);
+        tinyDB = new TinyDB(this);
 
-            int posters[] ={R.drawable.download, R.drawable.download1, R.drawable.download2,
-                    R.drawable.download3, R.drawable.download4};
+        btnnumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+tinyDB.getString("ad phone")));
+                startActivity(intent);
 
-            String textsuggest[] ={"فيلا للايجار بسغر مميز", "فيلل في كل انحاْ السعودية", "شقق للايجار ", "فيلا دوبلكس للايجار", "فيلا 3 ادوار للبيع"};
-
-            String textsuggest1[] = {"خالد الجهني", "هشام الجخ", "علاء حسن", "محمود صابر", "هشام عبدالله" };
-
-            for (int i =0; i < posters.length; i++)
-            {
-
-                RcyMainGrid villa = new RcyMainGrid(textsuggest[i],textsuggest1[i],posters[i]);
-
-                vila.add(villa);
             }
+        });
+        imgtwitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                URLItem = tinyDB.getString("urlItem");
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,"http://alosboiya.com.sa"+URLItem );
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
 
-            RecyclerView recyclerView = (RecyclerView)view.findViewById(R.id.rcyclgrid);
-            recyclerView.setHasFixedSize(true);
-            recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
-            RcyMainGridAdapter adabter = new RcyMainGridAdapter(vila,getContext(),this);
-            recyclerView.setAdapter(adabter);
+            }
+        });
+        imgface.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                URLItem = tinyDB.getString("urlItem");
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,"http://alosboiya.com.sa"+URLItem );
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
 
-        return view;
+        imgplus.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                URLItem = tinyDB.getString("urlItem");
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT,"http://alosboiya.com.sa"+URLItem );
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+            }
+        });
+
+
+
+
+
+
+
+        title = tinyDB.getString("title");
+        date = tinyDB.getString("date");
+        name = tinyDB.getString("name");
+        city = tinyDB.getString("city");
+        description = tinyDB.getString("description");
+        phonenumber = tinyDB.getString("ad phone");
+
+        textitemtitle.setText(title);
+        textitemdate.setText(date);
+        textitemname.setText(name);
+        textitemcity.setText(city);
+        textitemdesc.setText(description);
+        btnnumber.setText(phonenumber);
+
+        img = tinyDB.getString("img");
+        img1 = tinyDB.getString("img1");
+        img2 = tinyDB.getString("img2");
+        img3 = tinyDB.getString("img3");
+        img4 = tinyDB.getString("img4");
+        img5 = tinyDB.getString("img5");
+        img6 = tinyDB.getString("img6");
+        img7 = tinyDB.getString("img7");
+        slider();
+        department = tinyDB.getString("department");
+        new Apicalls(this,this).suggestAds(department);
+
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+
+    private void slider()
     {
-        super.onActivityCreated(savedInstanceState);
+       String[] ads={img,img1,img2,img3,img4,img5,img6,img7};
+       for (int i = 0; i<ads.length; i++)
+
+               if(ads[i]==null) {
+
+                   ads[i] = String.valueOf((Glide.with(this).load("http://alosboiya.com.sa/images/imgposting.png").placeholder(R.drawable.imgposting).into(slidercontain)));
+
+
+               }
+               //Glide.with(this).load("http://alosboiya.com.sa/images/imgposting.png").placeholder(R.drawable.imgposting).into(slidercontain);
+
+
+               viewPager = findViewById(R.id.slider);
+               slider_adapter = new Slider_adapter(this, ads);
+               viewPager.setAdapter(slider_adapter);
 
     }
-
     @Override
     public void onStop(){
-        msliderlayout.stopAutoCycle();
         super.onStop();
     }
 
-    @Override
-    public void onSliderClick(BaseSliderView slider) {
-        Toast.makeText(getContext(),slider.getBundle().get("extra") + "", Toast.LENGTH_SHORT).show();
-
-    }
-
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels)
-    {
-
-    }
-
-    @Override
-    public void onPageSelected(int position)
-    {
-        Log.d("MainActivity", "Page Changed: " + position);
-
-
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int state)
-    {
-
-    }
 
     @Override
     public void onItemClick(int position)
     {
-        FragmentTransaction fr = getFragmentManager().beginTransaction();
-        fr.replace(R.id.fragment_container,new ItemMainFragment());
-        fr.commit();
+    }
+
+    @Override
+    public void OnStart()
+    {
+
+    }
+
+    @Override
+    public void OnResponse(ResponseModel model)
+    {
+
+        Gson gson = new Gson();
+        post = gson.fromJson(model.getResponse(), Post[].class);
+
+        for (int i = 0; i < post.length; i++) {
+
+            Post newpost = new Post();
+
+            newpost.setTitle(post[i].getTitle());
+            newpost.setCity(post[i].getCity());
+            newpost.setImage(post[i].getImage());
+
+            suggestlist.add(newpost);
+
+            tinyDB.putString("departmentId", String.valueOf(post[i].getId()));
+
+        }
+        RecyclerView recyclerView = findViewById(R.id.rcyclgrid);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2));
+        RcyMainGridAdapter adabter = new RcyMainGridAdapter(suggestlist,this,this);
+        recyclerView.setAdapter(adabter);
+    }
+
+    @Override
+    public void OnError(VolleyError error)
+    {
+
+        new MyUtilFile(this).showMessage(error.getLocalizedMessage());
+
+
     }
 }

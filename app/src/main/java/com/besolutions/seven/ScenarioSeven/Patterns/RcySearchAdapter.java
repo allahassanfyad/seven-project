@@ -13,23 +13,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.besolutions.seven.R;
+import com.besolutions.seven.ScenarioSeven.Controllers.Activities.HomeFragment;
 import com.besolutions.seven.ScenarioSeven.Controllers.Activities.ItemMainFragment;
 import com.besolutions.seven.ScenarioSeven.Models.Post;
 import com.besolutions.seven.Utils.TinyDB;
 import com.bumptech.glide.Glide;
 
+import java.net.URL;
 import java.util.List;
 
-public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+public class RcySearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
 
     List<Post> mMainList;
     Context mContext;
     private OnItemListener mOnItemListener;
-
     TinyDB tinyDB;
 
-    public RcyMainAdapter(List<Post> listpost, Context context,OnItemListener onItemListener) {
+    public RcySearchAdapter(List<Post> listpost, Context context, OnItemListener onItemListener) {
         this.mMainList = listpost;
         this.mContext = context;
         this.mOnItemListener = onItemListener;
@@ -72,7 +73,6 @@ public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
        // mainHolder.poster.setImageResource(Integer.parseInt(main.getImage()));
         Glide.with(mContext)
                 .load(main.getImage())
-                .placeholder(R.drawable.imgposting)
                 .into(mainHolder.poster);
 
 
@@ -117,9 +117,6 @@ public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             textmain2 = itemView.findViewById(R.id.textMain2);
             textmain3 = itemView.findViewById(R.id.textMain3);
             poster = itemView.findViewById(R.id.poster);
-
-
-
             adsmain = itemView.findViewById(R.id.adsMain);
             this.onItemListener= onItemListener;
 

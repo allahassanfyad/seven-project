@@ -29,7 +29,7 @@
         />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edittextname"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:layout_marginRight="30dp"
@@ -46,7 +46,7 @@
         android:textColorHint="@color/colorDarkGray" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/editTextemail"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="text"
@@ -63,7 +63,7 @@
         />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextpass"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="numberPassword"
@@ -80,7 +80,7 @@
         />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextconfirmpass"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="numberPassword"
@@ -97,7 +97,7 @@
         />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editTextphone"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="text"
@@ -116,7 +116,7 @@
 
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/editTextcity"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="text"
@@ -133,7 +133,7 @@
         />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editTextcountry"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:inputType="text"

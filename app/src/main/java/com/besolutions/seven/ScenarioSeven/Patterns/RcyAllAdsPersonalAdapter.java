@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,16 +21,15 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
+public class RcyAllAdsPersonalAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 {
 
     List<Post> mMainList;
     Context mContext;
     private OnItemListener mOnItemListener;
-
     TinyDB tinyDB;
 
-    public RcyMainAdapter(List<Post> listpost, Context context,OnItemListener onItemListener) {
+    public RcyAllAdsPersonalAdapter(List<Post> listpost, Context context, OnItemListener onItemListener) {
         this.mMainList = listpost;
         this.mContext = context;
         this.mOnItemListener = onItemListener;
@@ -42,7 +42,7 @@ public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         tinyDB = new TinyDB(mContext);
 
-        View ads = LayoutInflater.from(parent.getContext()).inflate(R.layout.ads_main,parent,false);
+        View ads = LayoutInflater.from(parent.getContext()).inflate(R.layout.all_ads_personal,parent,false);
         MainItemHolder mainHolder = new MainItemHolder(ads,mOnItemListener) ;
 
 
@@ -76,23 +76,6 @@ public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 .into(mainHolder.poster);
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                tinyDB.putString("title",main.getTitle());
-                tinyDB.putString("date",main.getDatee());
-                tinyDB.putString("name",main.getNameMember());
-                tinyDB.putString("city",main.getCity());
-                tinyDB.putString("description",main.getDes());
-                tinyDB.putString("phonenumber",main.getPhone());
-
-                Intent intent = new Intent(mContext,ItemMainFragment.class);
-                mContext.startActivity(intent);
-
-
-            }
-        });
 
 
     }
@@ -106,21 +89,22 @@ public class RcyMainAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public class MainItemHolder extends RecyclerView.ViewHolder
     {
         TextView textmain, textmain1, textmain2,textmain3;
+        Button btnedit,btnrefresh,btndelete;
         ImageView poster;
         LinearLayout adsmain;
         OnItemListener onItemListener;
         public MainItemHolder(@NonNull View itemView,OnItemListener onItemListener)
         {
             super(itemView);
-            textmain = itemView.findViewById(R.id.textMain);
-            textmain1 = itemView.findViewById(R.id.textMain1);
-            textmain2 = itemView.findViewById(R.id.textMain2);
-            textmain3 = itemView.findViewById(R.id.textMain3);
-            poster = itemView.findViewById(R.id.poster);
-
-
-
-            adsmain = itemView.findViewById(R.id.adsMain);
+            textmain = itemView.findViewById(R.id.textAdPersonalTitle);
+            textmain1 = itemView.findViewById(R.id.textAdPersonalDate);
+            textmain2 = itemView.findViewById(R.id.textAdPersonalCity);
+            textmain3 = itemView.findViewById(R.id.textAdPersonalName);
+            poster = itemView.findViewById(R.id.imgAdPersonal);
+            adsmain = itemView.findViewById(R.id.adspersonal);
+            btndelete = itemView.findViewById(R.id.btnAdPersonalDelete);
+            btnedit = itemView.findViewById(R.id.btnAdPersonalEdit);
+            btnrefresh = itemView.findViewById(R.id.btnAdPersona1Refresh);
             this.onItemListener= onItemListener;
 
 

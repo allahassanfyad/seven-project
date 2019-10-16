@@ -17,26 +17,19 @@ public enum Apiclient
      *
      */
 
-    LOGIN_USER("user/login/549834453/25598", Arrays.asList("mail", "password"),1),
-    LOGIN_INVESTOR("login_investor?",Arrays.asList("email", "pass"),2),
-    INSERT_USER("insert_user?",Arrays.asList("Name","Email","Password","Age","Gender","Work","Mobile","Images","Identification","Account_statement"),3),
-    INSERT_INVESTOR("insert_investor?",Arrays.asList("Name","Email","Password","Age","Gender","Work","Mobile","Images"),4),
-    INSERT_PRODUCT("insert_product?",Arrays.asList("Title","Images","Price","Price_Agaal","Details","id_member","number"),5),
-    REQUEST_PRODUCT("request_product?",Arrays.asList("id_user","id_product","id_investor","date","status","cost","day","mouth","year","numberitems"),6),
-    SELECT_INVESTORS("selecte_all_investors", Collections.singletonList("id_member"),7),
-    SELECT_MY_REQUESTS("selecte_my_request?", Collections.singletonList("id_user"),8),
-    SELECT_USER("select_all_data_user?", Collections.singletonList("id_user"),9),
-    SELECT_MY_REQUESTS_INVESTOR("selecte_my_request_invistor?", Collections.singletonList("id_investor"),10),
-    SELECT_PRODUCTS("selecte_product_bymember?", Collections.singletonList("id_member"),11),
-    SELECT_MY_INSTALLMENTS("selecte_my_installment?", Collections.singletonList("id_user"),12),
-    SELECT_ADV_1("select_adv_1", null,13),
-    SELECT_ADV_2("select_adv_2", null,14),
-    SELECT_ADV_3("select_adv_3", null,15),
-    SELECT_ADV_4("select_adv_4", null,16),
-    UPDATE_RATE("update_rate?",Arrays.asList("number_rate","number_star","id_user"),16),
-    UPDATE_INSTALLMENT("update_installment?",Arrays.asList("id","status"),18),
-    UPDATE_USER("update_user?",Arrays.asList("id","Name","Email","Password","Age","Gender","Work","Mobile","Images","Identification","Account_statement"),19),
-    UPDATE_INVESTOR( "update_investor?",Arrays.asList("id","Name","Email","Password","Age","Gender","Work","Mobile","Images"),20);
+    LOGIN_USER("/login", Arrays.asList("email", "password"),1),
+    Register_Uer("/register",Arrays.asList("name", "cityyyyyyyyyyyyyyyy","countryy","email", "password", "phone"),2),
+    Edit_Profile("/edite_profile",Arrays.asList("id_member","city","password","image","phone","name"),3),
+    Add_post("/add_post HTTP/",Arrays.asList("id_member","title","des","ciiiiiiiiiiiiiiiiiiiiiiity","category","price","tel","sub","x","x_2","x_3","x_4","x_5","x_6","x_7","x_8","device"),4),
+    Main_Ads("/select_haraj",null,5),
+    Suggest_Ads("/select_post_suggest_by_department",Collections.singletonList("Department"),6),
+    Epire_Ads("/select_expire_post_for_member", Collections.singletonList("id_member"),7),
+    Personal_Ads("/select_post_by_id", Collections.singletonList("id_member"),8),
+    Search_Ads("/search_app", Collections.singletonList("text_search"),9),
+    Select_By_department("/select_haraj_by_Department",Collections.singletonList("Department"),10),
+    Select_By_City("/select_haraj_by_search_city",Collections.singletonList("city"),11);
+
+
 
 
 
@@ -46,11 +39,12 @@ public enum Apiclient
      * @BASE_URL
      */
 
-    String BASE_URL = "https://webdesign.be4em.info/rosto_api_ar/";
+    String BASE_URL = "http://alosboiya.com.sa//wsnew.asmx";
 
     private final String URL;
     private final List<String> params;
     private  final int code;
+
 
 
     Apiclient(String URL, List<String> params, int code)
@@ -59,7 +53,7 @@ public enum Apiclient
         this.URL = URL;
         this.params = params;
         this.code = code;
-    }
+}
 
     public String getURL()
     {

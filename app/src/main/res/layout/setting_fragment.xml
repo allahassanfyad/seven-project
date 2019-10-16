@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -10,91 +10,104 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/view2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_centerHorizontal="true"
-            android:elevation="12dp"
-            android:innerRadius="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginBottom="20dp"
-            android:shape="ring"
-            android:thicknessRatio="1.9"
-            app:cardCornerRadius="40dp">
-
-            <ImageView
-                android:id="@+id/profilePhoto"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/vila"
-                android:scaleType="centerCrop"/>
-
-
-        </androidx.cardview.widget.CardView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
+        android:id="@+id/relativeAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="15dp">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textName"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hesham"
-            android:textSize="15dp"
-            android:textColor="@color/colorSaudi"
-            android:layout_gravity="right"
-            android:textStyle="bold"
-            android:layout_marginRight="95dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="15dp"/>
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textCharge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="الرصيد الحالي"
-            android:textSize="15dp"
-            android:textColor="@color/colorSaudi"
-            android:layout_gravity="right"
-            android:textStyle="bold"
-            android:layout_marginRight="80dp"
-            android:layout_marginBottom="15dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/view2"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="12dp"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9"
+                app:cardCornerRadius="40dp">
 
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/textAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="295dp"
-        android:layout_marginBottom="15dp"
-        android:text=" 60"
-        android:textColor="@color/colorSaudi"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/profilePhoto"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/vila" />
 
 
-    <ImageView
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:src="@drawable/ryal"
-        android:layout_marginTop="95dp"
-        android:layout_marginLeft="255dp"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textSettingName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="alla"
+                    android:textColor="@color/colorSaudi"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textCharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="15dp"
+                    android:text="الرصيد الحالي"
+                    android:textColor="@color/colorSaudi"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layoutDirection="rtl"
+                    >
+
+
+
+                    <TextView
+                        android:id="@+id/textAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1500"
+                        android:layout_marginStart="90dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorSaudi"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+
+                    <ImageView
+                        android:layout_width="42dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ryal"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
     
     
     <Button
@@ -102,7 +115,7 @@
         android:layout_height="40dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="3dp"
         android:textColor="@color/colorPrimaryDark"
         android:backgroundTint="@color/colorAllCities"
         android:text="تعديل الملف الشخصي"/>
@@ -113,12 +126,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="189dp"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:orientation="horizontal"
             android:layoutDirection="rtl">
 
@@ -134,11 +145,11 @@
                 android:padding="5dp"/>
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editTextSettingname"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:inputType="text"
-                android:text="hesham"
+                android:text="alla"
                 android:paddingRight="10dp"
                 android:textColorHint="@color/colorDarkGray"
                 android:textColor="@color/colorBlack"
@@ -148,14 +159,13 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:orientation="horizontal"
             android:layoutDirection="rtl">
 
@@ -171,11 +181,11 @@
                 android:padding="5dp"/>
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editTextSettingphone"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:inputType="text"
-                android:text="66666666"
+                android:text="456555555"
                 android:paddingRight="10dp"
                 android:textColorHint="@color/colorDarkGray"
                 android:textColor="@color/colorBlack"
@@ -185,13 +195,13 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:orientation="horizontal"
             android:layoutDirection="rtl">
 
@@ -207,10 +217,10 @@
                 android:padding="5dp"/>
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editTextSettingImg"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:inputType="text"
+                android:layout_height="30dp"
+                android:inputType="none"
                 android:hint="اختر صورة جديدة"
                 android:paddingRight="10dp"
                 android:textColorHint="@color/colorDarkGray"
@@ -221,13 +231,13 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="9dp"
-                android:layout_marginBottom="5dp"
+                android:editable="false"
+                android:layout_marginBottom="2dp"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:orientation="horizontal"
             android:layoutDirection="rtl">
 
@@ -243,9 +253,9 @@
                 android:padding="5dp"/>
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/editTextSettingPass"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:inputType="numberPassword"
                 android:text="55555555555555"
                 android:paddingRight="10dp"
@@ -257,13 +267,12 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:orientation="horizontal"
             android:layoutDirection="rtl">
 
@@ -279,11 +288,11 @@
                 android:padding="5dp"/>
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/editTextSettingcity"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:inputType="text"
-                android:text="الرياض"
+                android:text="مصر"
                 android:paddingRight="10dp"
                 android:textColorHint="@color/colorDarkGray"
                 android:textColor="@color/colorBlack"
@@ -293,22 +302,26 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="12dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="2dp"
                 />
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnSettingEdit"
             android:layout_width="130dp"
             android:layout_height="22dp"
             android:text="حفظ التعديلات"
             android:background="@drawable/redus"
             android:layout_gravity="center"
             android:backgroundTint="@color/colorAllCities"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:layout_marginBottom="10dp"/>
+
 
 
     </LinearLayout>
 
 
-</RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

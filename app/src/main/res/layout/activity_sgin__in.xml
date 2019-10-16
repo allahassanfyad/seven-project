@@ -28,7 +28,7 @@
         android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/editTextsignin"
+        android:id="@+id/editTextSignIn"
         android:layout_width="match_parent"
         android:layout_height="33dp"
         android:layout_marginRight="30dp"
@@ -45,10 +45,10 @@
         android:textColorHint="@color/colorDarkGray" />
 
     <EditText
-        android:id="@+id/editTextsignin1"
+        android:id="@+id/editTextSignUp"
         android:layout_width="match_parent"
         android:layout_height="33dp"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         android:hint="كلمة السر"
         android:paddingRight="10dp"
         android:textColorHint="@color/colorDarkGray"
@@ -78,6 +78,12 @@
             android:layout_marginTop="3dp"
             />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layoutDirection="rtl">
+
 
         <TextView
             android:id="@+id/textsignin1"
@@ -86,10 +92,11 @@
             android:text="نسيت كلمة السر"
             android:textColor="@color/design_default_color_error"
             android:layout_marginBottom="20dp"
+            android:layout_marginRight="30dp"
             android:layout_marginTop="3dp"
-            android:layout_marginLeft="145dp"
             />
 
+        </LinearLayout>
 
     </LinearLayout>
 

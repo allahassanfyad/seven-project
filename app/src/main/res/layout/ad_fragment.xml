@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background">
 
@@ -11,100 +12,127 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/relativeAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <androidx.cardview.widget.CardView
             android:id="@+id/view2"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_centerHorizontal="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:elevation="12dp"
             android:innerRadius="0dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="70dp"
-            android:layout_marginBottom="20dp"
             android:shape="ring"
             android:thicknessRatio="1.9"
             app:cardCornerRadius="40dp">
 
             <ImageView
-                android:id="@+id/profilePhoto"
+                android:id="@+id/imgAccount"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/vila"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/vila" />
 
 
         </androidx.cardview.widget.CardView>
 
 
-    </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
-                android:id="@+id/textName"
+                android:id="@+id/textAccountName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hesham"
-                android:textSize="15dp"
-                android:textColor="@color/colorSaudi"
-                android:layout_gravity="right"
-                android:textStyle="bold"
-                android:layout_marginRight="95dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="15dp"/>
+                android:layout_marginBottom="15dp"
+                android:text="alla"
+                android:textColor="@color/colorSaudi"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/textCharge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
                 android:text="الرصيد الحالي"
-                android:textSize="15dp"
                 android:textColor="@color/colorSaudi"
-                android:layout_gravity="right"
-                android:textStyle="bold"
-                android:layout_marginRight="80dp"
-                android:layout_marginBottom="15dp"/>
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layoutDirection="rtl"
+                >
+
+
+
+                <TextView
+                    android:id="@+id/textAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 1500"
+                    android:layout_marginStart="75dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorSaudi"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/ryal"
+                    />
+
+
+
+
+            </LinearLayout>
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textAmount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:layout_marginTop="85dp"
-            android:layout_marginLeft="295dp"
-            android:layout_marginBottom="15dp"
-            android:text=" 60"
-            android:textColor="@color/colorSaudi"
-            android:textSize="20dp"
-            android:textStyle="bold" />
 
 
-        <ImageView
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:src="@drawable/ryal"
-            android:layout_marginTop="77dp"
-            android:layout_marginLeft="255dp"/>
+    </LinearLayout>
 
 
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="125dp"
             android:orientation="vertical">
+
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editTextAdTitle"
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
                 android:background="@android:drawable/editbox_background"
                 android:backgroundTint="@color/colorWhite"
                 android:gravity="right"
@@ -114,7 +142,7 @@
                 android:textColor="@color/colorBlack"
                 android:textColorHint="@color/colorDarkGray" />
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/editTextAdAddPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:inputType="text"
@@ -127,10 +155,9 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="5dp"
                 />
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editTextAdDepartment"
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:inputType="text"
@@ -143,10 +170,9 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="5dp"
                 />
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/editTextAdPhone"
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:inputType="text"
@@ -158,11 +184,9 @@
                 android:background="@android:drawable/editbox_background"
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginBottom="5dp"
-                />
+                android:layout_marginRight="15dp" />
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/editTextAdCity"
                 android:layout_width="match_parent"
                 android:layout_height="33dp"
                 android:inputType="text"
@@ -175,10 +199,9 @@
                 android:backgroundTint="@color/colorWhite"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:layout_marginBottom="5dp"
                 />
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/editTextAdDes"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:inputType="text"
@@ -196,6 +219,7 @@
                 android:lines="4"
                 />
             <Button
+                android:id="@+id/btnAdEdit"
                 android:layout_width="160dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
@@ -206,7 +230,8 @@
                 android:textSize="16dp"
                 />
         </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
+    </LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>
