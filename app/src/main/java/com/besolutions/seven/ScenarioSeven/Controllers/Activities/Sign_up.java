@@ -15,8 +15,6 @@ import com.besolutions.seven.NetworkLayer.ResponseModel;
 import com.besolutions.seven.R;
 import com.besolutions.seven.Utils.MyUtilFile;
 
-import java.util.Map;
-
 public class Sign_up extends AppCompatActivity implements NetworkInterface
 {
     EditText edittextname,edittextcity,edittextcountry,edittextemail,edittextpassword,edittextphone;
@@ -69,7 +67,7 @@ public class Sign_up extends AppCompatActivity implements NetworkInterface
         {
            new MyUtilFile(this).showMessage("تم تسجيل الدخول بنجاح");
 
-            Intent intent = new Intent(Sign_up.this,MainActivity.class);
+            Intent intent = new Intent(Sign_up.this, MainActivity.class);
             startActivity(intent);
 
         }

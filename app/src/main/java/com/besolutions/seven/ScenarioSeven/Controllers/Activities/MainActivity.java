@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        navigation=(BottomNavigationView)findViewById(R.id.navigation);
+        navigation = findViewById(R.id.navigation);
         fragmentManager=getSupportFragmentManager();
         navigation.setSelectedItemId(R.id.home);
         HomeFragment homeFragment = new HomeFragment();
         loadFragment(homeFragment);
-        toolbar = (Toolbar)findViewById(R.id.toolbar);
-        textback = (TextView) toolbar.findViewById(R.id.textBack);
-        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
+        toolbar = findViewById(R.id.toolbar);
+        textback = toolbar.findViewById(R.id.textBack);
+        imgplus = toolbar.findViewById(R.id.imgPlus);
         imgplus.setVisibility(View.VISIBLE);
         textback.setVisibility(View.INVISIBLE);
 
@@ -52,58 +52,44 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.home:
-                        HomeFragment homeFragment = new HomeFragment();
-                        loadFragment(homeFragment);
-                        toolbar = (Toolbar)findViewById(R.id.toolbar);
-                        textback = (TextView) toolbar.findViewById(R.id.textBack);
-                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
-                        imgplus.setVisibility(View.VISIBLE);
-                        textback.setVisibility(View.INVISIBLE);
-                        return true;
-
-                    case R.id.personal:
-                        PersonalFragment personalFragment = new PersonalFragment();
-                        loadFragment(personalFragment);
-                        toolbar = (Toolbar)findViewById(R.id.toolbar);
-                        textback = (TextView) toolbar.findViewById(R.id.textBack);
-                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
-                        imgplus.setVisibility(View.VISIBLE);
-                        textback.setVisibility(View.VISIBLE);
-                        return true;
-
-                    case R.id.ad:
-                        AdFragment adFragment = new AdFragment();
-                        loadFragment(adFragment);
-                        toolbar = (Toolbar)findViewById(R.id.toolbar);
-                        textback = (TextView) toolbar.findViewById(R.id.textBack);
-                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
-                        imgplus.setVisibility(View.INVISIBLE);
-                        textback.setVisibility(View.INVISIBLE);
-                        return true;
-
-                        case R.id.search:
-                        SearchFragment searchFragment = new SearchFragment();
-                        loadFragment(searchFragment);
-                        toolbar = (Toolbar)findViewById(R.id.toolbar);
-                        textback = (TextView) toolbar.findViewById(R.id.textBack);
-                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
-                        imgplus.setVisibility(View.INVISIBLE);
-                        textback.setVisibility(View.INVISIBLE);
-                        return true;
-
-                    case R.id.help:
-                        HelpFragment helpFragment = new HelpFragment();
-                        loadFragment(helpFragment);
-                        toolbar = (Toolbar)findViewById(R.id.toolbar);
-                        textback = (TextView) toolbar.findViewById(R.id.textBack);
-                        imgplus = (ImageView) toolbar.findViewById(R.id.imgPlus);
-                        imgplus.setVisibility(View.INVISIBLE);
-                        textback.setVisibility(View.INVISIBLE);
-                        return true;
+                            HomeFragment homeFragment = new HomeFragment();
+                            loadFragment(homeFragment);
+                            imgplus.setVisibility(View.VISIBLE);
+                            textback.setVisibility(View.INVISIBLE);
+                            return true;
 
 
-                    default:
-                        return true;
+                            case R.id.personal:
+                                PersonalFragment personalFragment = new PersonalFragment();
+                                loadFragment(personalFragment);
+                                imgplus.setVisibility(View.VISIBLE);
+                                textback.setVisibility(View.VISIBLE);
+                                return true;
+
+                            case R.id.ad:
+                                AdFragment adFragment = new AdFragment();
+                                loadFragment(adFragment);
+                                imgplus.setVisibility(View.INVISIBLE);
+                                textback.setVisibility(View.INVISIBLE);
+                                return true;
+
+                            case R.id.search:
+                                SearchFragment searchFragment = new SearchFragment();
+                                loadFragment(searchFragment);
+                                imgplus.setVisibility(View.INVISIBLE);
+                                textback.setVisibility(View.INVISIBLE);
+                                return true;
+
+                            case R.id.help:
+                                HelpFragment helpFragment = new HelpFragment();
+                                loadFragment(helpFragment);
+                                imgplus.setVisibility(View.INVISIBLE);
+                                textback.setVisibility(View.INVISIBLE);
+                                return true;
+
+
+                                default:
+                                    return true;
 
                 }
 

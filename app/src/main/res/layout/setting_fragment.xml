@@ -147,7 +147,7 @@
             <EditText
                 android:id="@+id/editTextSettingname"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:inputType="text"
                 android:text="alla"
                 android:paddingRight="10dp"
@@ -183,7 +183,7 @@
             <EditText
                 android:id="@+id/editTextSettingphone"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:inputType="text"
                 android:text="456555555"
                 android:paddingRight="10dp"
@@ -219,7 +219,7 @@
             <EditText
                 android:id="@+id/editTextSettingImg"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:inputType="none"
                 android:hint="اختر صورة جديدة"
                 android:paddingRight="10dp"
@@ -255,7 +255,7 @@
             <EditText
                 android:id="@+id/editTextSettingPass"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:inputType="numberPassword"
                 android:text="55555555555555"
                 android:paddingRight="10dp"
@@ -290,7 +290,7 @@
             <EditText
                 android:id="@+id/editTextSettingcity"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:inputType="text"
                 android:text="مصر"
                 android:paddingRight="10dp"

@@ -13,13 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.besolutions.seven.R;
-import com.besolutions.seven.ScenarioSeven.Controllers.Activities.HomeFragment;
 import com.besolutions.seven.ScenarioSeven.Controllers.Activities.ItemMainFragment;
 import com.besolutions.seven.ScenarioSeven.Models.Post;
 import com.besolutions.seven.Utils.TinyDB;
 import com.bumptech.glide.Glide;
 
-import java.net.URL;
 import java.util.List;
 
 public class RcySearchAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>

@@ -163,7 +163,7 @@
             <EditText
                 android:id="@+id/editTextAccountName"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="15dp"
@@ -181,7 +181,7 @@
             <EditText
                 android:id="@+id/editTextAccountphone"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="3dp"
@@ -198,7 +198,7 @@
             <EditText
                 android:id="@+id/editTextAccountEmail"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="3dp"
@@ -215,7 +215,7 @@
             <EditText
                 android:id="@+id/editTextAccountCountry"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="3dp"
@@ -232,7 +232,7 @@
             <EditText
                 android:id="@+id/editTextAccountCity"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="5dp"

@@ -1,7 +1,6 @@
 package com.besolutions.seven.ScenarioSeven.Controllers.Activities;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +31,6 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class HomeFragment extends Fragment implements AdapterView.OnItemSelectedListener, RcyMainAdapter.OnItemListener, NetworkInterface
 {

@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.besolutions.seven.R;
 import com.besolutions.seven.ScenarioSeven.Controllers.Activities.ItemMainFragment;
 import com.besolutions.seven.ScenarioSeven.Models.Post;
-import com.besolutions.seven.ScenarioSeven.Models.RcyMainGrid;
 import com.bumptech.glide.Glide;
 
 import java.util.List;

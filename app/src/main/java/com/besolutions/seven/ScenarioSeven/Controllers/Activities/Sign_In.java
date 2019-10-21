@@ -19,8 +19,6 @@ import com.besolutions.seven.ScenarioSeven.Models.User;
 import com.besolutions.seven.Utils.TinyDB;
 import com.google.gson.Gson;
 
-import java.util.Map;
-
 public class Sign_In extends AppCompatActivity implements NetworkInterface
 {
 
@@ -104,7 +102,7 @@ public class Sign_In extends AppCompatActivity implements NetworkInterface
                tinyDB.putString("balance",userModel[0].getBalance());
 
 
-               Intent intent = new Intent(Sign_In.this,MainActivity.class);
+               Intent intent = new Intent(Sign_In.this, MainActivity.class);
                startActivity(intent);
 
                tinyDB.putBoolean("isLoggedIn",true);
